@@ -1,0 +1,35 @@
+{
+  "name": "nottcheee",
+  "version": "0.1.0",
+  "description": "NOTTCHEEE - Windows notch/pill workspace (Electron MVP, Tauri port later on RDP)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "dist": "electron-builder --win nsis --publish never"
+  },
+  "build": {
+    "appId": "com.nottcheee.app",
+    "productName": "NOTTCHEEE",
+    "files": [
+      "main.js",
+      "preload.js",
+      "mockup.html",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^26.15.3"
+  }
+}
